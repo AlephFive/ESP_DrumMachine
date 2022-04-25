@@ -94,8 +94,9 @@ async function connectSerial(){
 
 function playBeat(beatStr){
 	
-	console.log(beatStr.charAt(1))
-	kick.play();
+	if (beatStr.charAt(3) === '1') kick.play();
+	if (beatStr.charAt(2) === '1') snare.play();
+	if (beatStr.charAt(1) === '1') hat.play();
 }
 
 
