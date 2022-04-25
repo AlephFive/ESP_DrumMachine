@@ -8,7 +8,9 @@ var ports;
 
 var controllerData = {"b":0,"x":1905,"y":1925, "p":0};
 
-var sound;
+var kick;
+var hat;
+var snare;
 
 function setup() {
 	progress = 0.5;
@@ -28,8 +30,14 @@ function setup() {
 	button.position(0, 0);
 	button.mousePressed(connectSerial);
 
-	sound = new Howl({
-		src: ['./drums/hat.mp3', './drums/kick.mp3', './drums/snare.mp3']
+	kick = new Howl({
+		src: ['./drums/kick.mp3']
+	});
+	hat = new Howl({
+		src: ['./drums/hat.mp3']
+	});
+	snare = new Howl({
+		src: ['./drums/snare.mp3']
 	});
 	
 }
@@ -87,6 +95,7 @@ async function connectSerial(){
 function playBeat(beatStr){
 	
 	console.log(beatStr.charAt(1))
+	kick.play();
 }
 
 
