@@ -30,6 +30,7 @@ int lastDebounceTime = millis();
 
 int Xprev = 2800;
 int Yprev = 2800;
+int btnPrev = 1000;
 
 
 
@@ -88,7 +89,7 @@ void buttonSetup(){
   pinMode(BTN_PIN, INPUT);
 
   attachInterrupt(digitalPinToInterrupt(BUTTON_RIGHT), toggle_pause, FALLING);
-  attachInterrupt(digitalPinToInterrupt(BTN_PIN), toggle_input, FALLING);
+  //attachInterrupt(digitalPinToInterrupt(BTN_PIN), toggle_input, FALLING);
 }
 
 
@@ -124,7 +125,12 @@ void loop() {
   bpm = int(float(analogRead(POT))*(200.0/4095.0)) + 60;
   //Serial.println(String(bpm)); 
 
-
+  int btnVal = analogRead(BTN_PIN);
+  if(btnVal < 4000 && btnPrev >= 4000){
+    score[ cursorPos[0] ][ cursorPos[1] ] = !score[ cursorPos[0] ][ cursorPos[1] ];
+  }
+  btnPrev = btnVal;
+  
   
 
   //tft.fillScreen(TFT_BLACK);
