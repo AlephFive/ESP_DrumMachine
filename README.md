@@ -6,13 +6,10 @@ The Drum Programmer part is done on the ESP32. Here, a graphical representation 
 
 
 
-### Loading Simulator 2022 interface
+### ESP32 Drum Machine interface and controller
 ![Loading screen](https://user-images.githubusercontent.com/6265129/157605167-266e482e-3f3b-49db-b4cd-2dffccc8f89a.jpg)
 
-### Controller
-![PXL_20220310_053957084](https://user-images.githubusercontent.com/6265129/157605463-1f0cfcb0-42dd-4470-8b3b-6d4e4f52e94a.jpg)
-![PXL_20220310_054018956](https://user-images.githubusercontent.com/6265129/157605483-61067e94-b514-43bd-8122-a84fa1742c05.jpg)
-
+### Musical Demo
 
 ## How to run ESP32 Drum Machine
 To run ESP32 Drum Machine, simply go to https://brian.ma/ESP_DrumMachine/ in a browser that supports web serial e.g. Google Chrome. The system accepts data in a string format with 3 data fields so you can build your own drum beat programmer:
