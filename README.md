@@ -4,12 +4,10 @@ There are two parts to this project. The ESP32 code, which allows the user to pr
 
 The Drum Programmer part is done on the ESP32. Here, a graphical representation of a single bar drum pattern is displayed on the ESP32's LCD screen. The pattern consists of a 8-by-3 grid of dots. The 8 dots horizontally represent all the 8th notes in a single bar of a 4/4 measure. The 3 dots vertically represent the 3 main instruments of a drum set -- hi-hat, snare drum, and bass drum. The user uses a joystick to control the position of a "cursor". The user can then use the button to "toggle" that dot. If the dot is filled, it means that the instrument (e.g. snare drum) is played at that moment in time (e.g. the "downbeat of beat 3"). By filling a bunch of dots, the user can program a drum pattern. To play the drum pattern, the user can "unpause" using the button on the ESP. When "unpaused" a vertical line representing the current time position moves rightwards, and each time it reaches a group of 3 dots it sends a signal via serial to the Javascript system which plays the corresponding drum hit. The signal is structured as follows: "{ABC}" where each letter is either a 1 or a 0, representing if the specific instruments plays at that moment in time, or not. The potentiometer controls the BPM value, which speeds up or slows down the drum beat.
 
-
-
 ### ESP32 Drum Machine interface and controller
-![Loading screen](https://user-images.githubusercontent.com/6265129/157605167-266e482e-3f3b-49db-b4cd-2dffccc8f89a.jpg)
+![5](https://user-images.githubusercontent.com/6265129/167313745-7e2e44c1-e441-4909-a416-9cf37426d177.jpg)
 
-### Musical Demo
+![enclosure](https://user-images.githubusercontent.com/6265129/167313837-29a1b026-08f5-4eb1-a2d3-95b1cea4d4db.jpg)
 
 ## How to run ESP32 Drum Machine
 To run ESP32 Drum Machine, simply go to https://brian.ma/ESP_DrumMachine/ in a browser that supports web serial e.g. Google Chrome. The system accepts data in a string format with 3 data fields so you can build your own drum beat programmer:
@@ -25,7 +23,6 @@ Pressing the Button toggles the circle under the cursor.
 Moving the joystick moves the cursor position.
 Turning the potentiometer increases or decreases the BPM.
 Pressing the integrated ESP32 Button toggle Play/Pause.
-
 
 ## How to run ESP32 code:
 The code to run is under the DrumProgrammer folder. 
